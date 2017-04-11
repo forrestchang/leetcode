@@ -13,3 +13,5 @@ class Solution(object):
             except IndexError:
                 return nums[-1]
         return nums[i]
+
+
