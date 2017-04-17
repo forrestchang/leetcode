@@ -19,4 +19,3 @@ class Solution(object):
 if __name__ == '__main__':
     result = ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]
     assert Solution().fizzBuzz(15) == result
-    # print(Solution().fizzBuzz(15))
