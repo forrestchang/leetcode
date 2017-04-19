@@ -4,20 +4,27 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        def _check(nums):
-            for num in nums[1:]:
-                if num != nums[0]:
-                    return False
-            return True
-        count = 0
-        while _check(nums) is False:
-            max_num = max(nums)
-            nums = [num + 1 for num in nums if num != max_num] + [max_num]
-            count += 1
-        return count
+        # def _check(alist):
+        #     max_num = max(alist)
+        #     for elem in alist:
+        #         if elem != max_num:
+        #             return False
+        #     return True
+        # count = 0
+        # while not _check(nums):
+        #     count += 1
+        #     max_index = nums.index(max(nums))
+        #     for i in range(len(nums)):
+        #         if i != max_index:
+        #             nums[i] += 1
+        # return count
+        min_num = min(nums)
+        res = 0
+        for n in nums:
+            res += n - min_num
+        return res
 
 
 if __name__ == '__main__':
-    print(Solution().minMoves([1, 2, 3]))
     assert Solution().minMoves([1, 2, 3]) == 3
     assert Solution().minMoves([1, 5, 2]) == 5
